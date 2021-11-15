@@ -1,17 +1,14 @@
 import axios from 'axios'
 
-type typeParams = {
-  params: {
-    email:string,
-    name:string,
-    password:string,
-    phone: string
-  }
-}
+// type typeParams = {
+//   params: {
+//     email:string,
+//     name:string,
+//     password:string,
+//     phone: string
+//   }
+// }
 
-type usersType = {
-  data: Array<userType>
-}
 
 
 type userType = {
@@ -27,7 +24,7 @@ type userType = {
 
 
 const fetchUsers = () => {
-  return axios.request<usersType>({
+  return axios.request<userType[]>({
     method: 'GET',
     url: `http://localhost:3000/users`,
     headers: {

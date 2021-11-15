@@ -29,7 +29,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:server": "node server/index.js",
+    "backend": "node server/index.js",
+    "db": "sudo mongod --dbpath ~/data/db",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
