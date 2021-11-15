@@ -1,8 +1,15 @@
 # playground
-run app on linux - wsl2
-# (optional DB is running on atlas) run database - mongoDB
-sudo mongod --dbpath ~/data/db      
-# 2 run backend - nodeJes
+RUN APPLICATUION
+
+# mongo db is on cloud using atllas 
+
+# 1 run backend - nodeJes
 npm run backend
-# 3 run frontend - react
+
+# 2 run frontend - react
 npm start
+
+OPTIONAL (rinning mongo fb locally)
+# run app on linux - wsl2
+sudo mongod --dbpath ~/data/db 
+#repeat steps 1-2 
