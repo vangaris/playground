@@ -3,6 +3,7 @@ import {Box} from '@mui/material'
 
 import AppBar from '../src/components/AppBar'
 import BottomNavigation from '../src/components/BottomNavigation'
+import SignUp from './components/SignUp'
 
 import {fetchUsers} from '../src/api/users'
 
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <AppBar />
+      <SignUp />
       {users.map(u => (
         <Box key={u._id}>
           <h2>{u.name}</h2>

@@ -1,15 +1,9 @@
 import React, {useState} from 'react'
-import {Grid, Paper, Avatar, Button, Typography, Link} from '@material-ui/core'
-import LockIcon from '@mui/icons-material/Lock'
+import {Grid, Paper, Button, Typography, Link} from '@mui/material'
 import {TextField} from '@mui/material'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
-import {width} from '@mui/system'
-//import {SettingsOverscanOutlined} from '@mui/icons-material/'
-import {setConstantValue} from 'typescript'
 import axios from 'axios'
-import {SettingsInputAntennaTwoTone} from '@material-ui/icons'
+
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -19,7 +13,7 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
   })
-  const [state, setState] = useState()
+  const [, setState] = useState()
 
   const [errors, setErrors] = useState({short: '', mismatch: ''})
   const baseURL = 'http://localhost:3000/users'
@@ -64,13 +58,13 @@ const SignUp = () => {
     } else {
       setErrors(state => ({short: '', mismatch: ''}))
       console.log(data)
-      //   axios
-      //     .post(baseURL, data)
-      //     .then(response => setState({dataId: response.data.id}))
-      //     .catch(er => {
-      //       setState({errorMessage: er.message})
-      //       console.log('There was an error!', er)
-      //     })
+        axios
+          .post(baseURL, data)
+          .then(response => setState({dataId: response.data.id}))
+          .catch(er => {
+           setState({errorMessage: er.message})
+           console.log('There was an error!', er)
+         })
     }
     return error
   }
