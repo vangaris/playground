@@ -11,6 +11,11 @@ type userType = {
     __v: number
 }
 
+type loginType  = {
+  email:  any,
+  password:  any
+}
+
 
 const fetchUsers =async () => {
   const response = await axios.request<userType[]>({
@@ -24,4 +29,18 @@ const fetchUsers =async () => {
   return response.data
 }
 
-export {fetchUsers}
+const login = async ({email, password} : loginType) => {
+  const data = {email, password}
+  const response = await axios.request<any>({
+    method: 'post',
+    url: `http://localhost:3000/users/login`,
+    headers: {
+      'Content-type': 'application/json',
+    },
+    data
+  })
+  
+  return response.data
+}
+
+export {fetchUsers, login}
