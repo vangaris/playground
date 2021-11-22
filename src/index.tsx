@@ -7,13 +7,16 @@ import {ReactQueryDevtools} from 'react-query/devtools'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import {AuthProvider} from '../src/context/auth-context'
 
 const queryClient = new QueryClient()
 
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
       <ReactQueryDevtools initialIsOpen />
     </React.StrictMode>
   </QueryClientProvider>,

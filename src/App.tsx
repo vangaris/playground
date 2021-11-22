@@ -1,21 +1,22 @@
-import {useState} from 'react'
 import AppBar from '../src/components/AppBar'
 import Users from './components/Users'
 import SignIn from './components/SignIn'
+import {useAuth} from '../src/context/auth-context'
 
 function App() {
-  const [loggedIn, setLoggedIng] = useState(false)
+  const {user} = useAuth()
+
   return (
-    <div className="App">
-      {loggedIn ? (
+    <>
+      {user ? (
         <>
           <AppBar />
           <Users />
         </>
       ) : (
-        <SignIn setAuthUser={setLoggedIng} />
+        <SignIn />
       )}
-    </div>
+    </>
   )
 }
 

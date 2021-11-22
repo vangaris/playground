@@ -1,25 +1,28 @@
 import {useState} from 'react'
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import Link from '@mui/material/Link'
-import Paper from '@mui/material/Paper'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Link,
+  Paper,
+  Box,
+  Grid,
+  Typography,
+} from '@mui/material'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import Typography from '@mui/material/Typography'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
-import {login} from '../api/users'
+
+import {useAuth} from '../context/auth-context'
+import {login} from '../api/auth'
 
 const theme = createTheme()
-type propsTypes = {
-  setAuthUser: (value: boolean) => void
-}
 
-export default function SignInSide({setAuthUser}: propsTypes) {
+export default function SignInSide() {
+  const {setUser} = useAuth()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -31,12 +34,12 @@ export default function SignInSide({setAuthUser}: propsTypes) {
   }
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    await login({
+    const {user, token} = await login({
       email,
       password,
     })
-
-    setAuthUser(true)
+    console.log(token, user)
+    setUser({user: true})
   }
 
   return (
