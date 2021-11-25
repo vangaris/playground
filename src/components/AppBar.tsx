@@ -1,20 +1,24 @@
 import * as React from 'react'
 import {styled, alpha} from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import InputBase from '@mui/material/InputBase'
-import Badge from '@mui/material/Badge'
-import MenuItem from '@mui/material/MenuItem'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import SearchIcon from '@mui/icons-material/Search'
-import AccountCircle from '@mui/icons-material/AccountCircle'
-import MailIcon from '@mui/icons-material/Mail'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import MoreIcon from '@mui/icons-material/MoreVert'
+import {
+  Menu,
+  MenuItem,
+  Badge,
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  InputBase,
+} from '@mui/material'
+import {
+  Menu as MenuIcon,
+  Search as SearchIcon,
+  Mail,
+  Notifications,
+  More,
+  AccountCircle,
+} from '@mui/icons-material'
 
 const Search = styled('div')(({theme}) => ({
   position: 'relative',
@@ -99,7 +103,6 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   )
 
@@ -123,7 +126,7 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <Mail />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -135,7 +138,7 @@ export default function PrimarySearchAppBar() {
           color="inherit"
         >
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+            <Notifications />
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -193,7 +196,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <Mail />
               </Badge>
             </IconButton>
             <IconButton
@@ -202,7 +205,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <Notifications />
               </Badge>
             </IconButton>
             <IconButton
@@ -226,7 +229,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <More />
             </IconButton>
           </Box>
         </Toolbar>

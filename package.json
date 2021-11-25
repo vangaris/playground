@@ -24,13 +24,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.33.1",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.4.4",
     "validator": "^13.0.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=5000 react-scripts start",
     "backend": "node server/index.js",
     "db": "sudo mongod --dbpath ~/data/db",
     "build": "react-scripts build",
